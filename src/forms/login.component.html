@@ -1,0 +1,30 @@
+<div style="padding: 1em 1em">
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+
+        <ion-item>
+            <ion-label floating>Adresse email</ion-label>
+            <ion-input placeholder="" type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Mot de passe</ion-label>
+            <ion-input type="password" formControlName="password" name="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label class="text-card">Garder ma session ouverte</ion-label>
+            <ion-checkbox checked="true" formControlName="isPersisten"></ion-checkbox>
+        </ion-item>
+
+
+        <div *ngIf="error" style="font-size:0.9em;margin:1em 1em;padding:1em 1em;background:rgba(255,50,50,0.5)">
+            <ion-icon item-left large name="warning"></ion-icon>
+            {{error}}
+        </div>
+        <button ion-button outline block type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Valider</button>
+    </form>
+    <div>
+        <button ion-button outline block (click)="onCreateAccount()">Creer un compte</button>
+    </div>
+
+</div>

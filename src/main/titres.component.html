@@ -1,0 +1,17 @@
+<div *ngIf="constitutions">
+    <!--<h2 style="padding-left: 20px;padding-bottom:10px;">
+        Changer de Constitution
+    </h2>
+    <ion-select [(ngModel)]="selectedValue" name="constitution" (change)="changeConstitution($event)">
+      <ion-option *ngFor="let constitution of constitutions; let i = index" value="constitution.constitution_id" >{{constitution.short_name}}</ion-option>     
+    </ion-select>-->
+    
+    <ion-list *ngIf="titres && titres.length">
+        <div *ngFor="let titre of titres">
+            <titre-component [titre]="titre"></titre-component>
+        </div>        
+    </ion-list>
+    <div *ngIf="selectedValue !== applicableConstitutionId" style="margin-top:20px;margin-left: 20px">
+        <button ion-button (click)="addArticle()">Ajouter un article à cette constitution</button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="dashboard-page" padding>
+    <h1 style="font-family: Dosis">Tableau de bord</h1>
+    <div>
+        <ion-segment [(ngModel)]="view">
+            <ion-segment-button value="myvotes">
+                Mes votes
+            </ion-segment-button>
+            <ion-segment-button value="generalVotes">
+                Vue generale
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <div [ngSwitch]="view">
+        <user-votes-component (settingEmitter)="updateView($event)"  *ngSwitchCase="'myvotes'" ></user-votes-component>
+        <app-general-stat *ngSwitchCase="'generalVotes'"></app-general-stat>
+    </div>
+</div>

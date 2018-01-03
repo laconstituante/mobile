@@ -1,0 +1,152 @@
+body{
+  font-family: 'Dosis', serif;
+}
+ion-content{
+	background-color: #F9f9f9;
+}
+.titre-name{
+	font-family: 'Dosis';
+}
+.titre-name button{
+	font-family: 'Dosis';
+	margin-left: 20px;
+}
+.card-title{
+	font-family: Dosis;	
+}
+.card-text{
+	font-family: Dosis;	
+}
+.card-button{
+	font-family: Dosis;	
+}
+.button-small-md {
+    padding: 0 0.4em!important;
+    height: 2.1em;
+    font-size: 1.2rem!important;
+}
+button:focus {outline:0;}
+
+.right-content{
+    float:left;
+    display: flex;
+    overflow: visible;
+}
+.bg-slide{
+	background: url(../img/slide-bg.png);
+	background-repeat: repeat-y;
+	color:white;
+}
+.button-md{
+	padding: 0 0.8em;
+}
+.scrolling-content {
+  overflow: auto;
+}
+
+.my-content{
+    padding: 0px;
+}
+
+.buttons-container{
+	margin:100px auto;
+	text-align:center;
+}
+
+.article-text{
+    margin: 0% 3%;
+}
+.titre-blod{
+	font-size: 2em;
+	font-weight: bold;
+}
+.titre-light{
+	font-size: 1.2em;
+}
+.center_middle{
+	padding: 0% 3%;
+}
+
+.full-width{
+	width: 100%;
+}
+titres-component{
+	padding-left: 15px;
+}
+
+.contre-label{
+	background:#ff5131;
+	padding: 10px;
+	border-radius:3px;
+	font-size: 0.8em;
+}
+.pour-label{
+	background:#99d066;
+	padding: 10px;
+	border-radius:3px;
+	font-size: 0.8em;
+}
+.logo{
+	cursor: pointer;
+	float:left;
+	margin-top: 8px;
+}
+.arrow-scroll{
+	text-align: center;
+	cursor: pointer;
+}
+.header-title{
+	line-height: 15px;
+	font-family: 'Dosis';
+}
+.alinea-text{
+	font-family: 'Dosis';
+	text-align: left;
+	color:black!important;
+	padding: 5px 10px;	
+}
+.claim-text{
+	text-align: center;
+	padding: 3%;
+	font-size: 2em;
+	font-family: 'Dosis', serif;
+}
+.claim-text-smaller{
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Dosis', serif;
+}
+.underlined-text{
+	text-decoration:underline;
+}
+.card-pie{
+	width:80%;
+}
+.card-footer-pie-legend{
+	text-align: center;
+	padding-top:10px;
+	font-weight: 100;
+}
+.footer-with-prop{
+	text-align: center;
+	cursor: pointer;
+	text-decoration: underline;
+	padding: 10px 10px;
+}
+.mat-chip-list-wrapper{
+	display: inline!important;
+}
+.proposition-card {  
+  margin-bottom:20px; 
+}
+.prop-badge {
+   
+   font-size:.7em;
+   background:rgba(153, 208, 102, 0.9);
+   color:white;
+   width:18px;height:18px;
+   text-align:center;
+   line-height:18px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}

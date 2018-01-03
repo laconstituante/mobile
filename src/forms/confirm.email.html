@@ -1,0 +1,34 @@
+<div style="padding:1em 1em">
+    <form *ngIf="display === 'form'" (ngSubmit)="onSubmit()" #confirmUserForm="ngForm" style="padding:20px">
+        <h2>Parfait!</h2>
+        <label style="font-size: 1.2em;font-family: 'Dosis',serif">
+                Nous venons de vous envoyer un courriel electronique afin de confirmer votre adresse.<br>
+                S'il vous plait, copier coller le code que vous avez reçu ci dessous:
+            </label>
+        <br>
+        <ion-item>
+            <ion-label floating>Code de confirmation</ion-label>
+            <ion-input [(ngModel)]="code" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+        <ion-item>
+            <button outline block ion-button [disabled]="!confirmUserForm.form.valid">Valider</button>
+        </ion-item>
+        <label *ngIf='warning'>
+                {{warning}}
+        </label>
+    </form>
+    <div class="claim-text-smaller" *ngIf="display === 'error'">
+        {{error}}
+        <button ion-button color="light" (click)="goToForm()">Ok</button>
+    </div>
+    <div class="claim-text-smaller" *ngIf="display === 'success'">
+        <ion-item color="secondary">
+            <ion-icon item-left large name="checkmark"></ion-icon>
+            Validée
+        </ion-item>
+        <h1 class="claim-text-smaller btn btn-success">
+            Bienvenu(e) en démocratie du 21e siècle.
+        </h1>
+        <button ion-button bloc color="light" (click)="goToLoggedInSection()" >Click ici pour continuer.</button>
+    </div>
+</div>

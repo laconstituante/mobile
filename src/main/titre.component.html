@@ -1,0 +1,8 @@
+<ion-item class="titre-name" text-wrap (click)="toggleGroup()"  [ngClass]="{active: isGroupShown(i)}" detail-none>
+    {{item[0]}}: {{item[1]}}
+    <!--<ion-icon color="success" item-right [name]="isGroupShown() ? 'arrow-up' : 'arrow-dropdown' "></ion-icon>-->
+</ion-item>
+<div *ngIf="isGroupShown()">
+    <articles-compnent [articles]="titre.articles" (onArticleSelected)="onArticleSelected($event)">
+    </articles-compnent>
+</div>

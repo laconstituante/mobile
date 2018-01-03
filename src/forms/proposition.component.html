@@ -1,0 +1,18 @@
+<ion-card class="card">
+
+  <ion-card-content class="card-content">
+    <ion-card-title class="card-title">
+      Proposition {{proposition.proposition_number}}
+    </ion-card-title>
+    <p class="card-text">
+       {{proposition.proposition_text}}
+    </p>
+  </ion-card-content>  
+  <ion-row class="row">
+    <ion-col class="col">
+      <button class="card-button" ion-button color="light" [disabled]="proposition.vote === 3" (click)="signaler()">Signaler</button>
+      <button class="card-button" ion-button [disabled]="proposition.vote === 0" (click)="rejeter()" color="light">Rejeter</button>
+      <button class="card-button" ion-button [disabled]="proposition.vote === 1" (click)="approuver()" color="light">Approuver</button>
+    </ion-col>    
+  </ion-row>
+</ion-card>

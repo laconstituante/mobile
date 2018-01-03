@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="font-family: Dosis">
+      {{componentTitle}}
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Fermer</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="display" padding>
+    <propositions-component  *ngSwitchCase="'propositions-component'" 
+                             (closeModalEmitter)="dismiss()"
+                             [alinea_id]="inputValue"></propositions-component>
+    <login-component         *ngSwitchCase="'login-component'"  
+                             (closeModalEmitter)="dismiss()"></login-component>
+    <insufficiant-privileges *ngSwitchCase="'insufficiant-privileges'"  
+                              (closeModalEmitter)="dismiss()"></insufficiant-privileges>
+    <confirm-email           *ngSwitchCase="'confirm-email'" 
+                             (closeModalEmitter)="dismiss()"></confirm-email>
+  </div>
+</ion-content>

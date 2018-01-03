@@ -1,0 +1,40 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <div style="font-family: Dosis">
+          La constituante<br>
+          <table>
+            <tbody>
+              <tr style="height:5px">
+                <td style="background:blue;width: 42px;" title="liberté"></td>
+                <td style="background:white;width: 42px;" title="égalité"></td>
+                <td style="background:red;width: 42px;" title="fraternité"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ion-title>      
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div *ngIf="constitutions">
+      <ion-list-header>
+        <ion-label>Changer de Constitution</ion-label>
+        <ion-select (ionChange)="changeConstitution($event)" [(ngModel)]="selectedValue">
+          <ion-option *ngFor="let constitution of constitutions" value="{{constitution.constitution_id}}">{{constitution.short_name}}</ion-option>
+        </ion-select>
+      </ion-list-header>
+      <div *ngIf="titres && titres.length > 0">
+          <titre-component *ngFor="let titre of titres" [titre]="titre"></titre-component>  
+      </div>
+      <div *ngIf="selectedValue !== applicableConstitutionId" style="margin-top:20px;margin-left: 20px">
+        <button ion-button color="light" (click)="addArticle()" menuClose>Ajouter un article</button>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

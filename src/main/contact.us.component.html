@@ -1,0 +1,22 @@
+<div padding>
+  <h4 class="text-card">Contactez-nous!</h4>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Votre adresse email</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Sujet</ion-label>
+        <ion-input type="text" [(ngModel)]="subject"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label floating>Rédigez votre message ici</ion-label>
+      <ion-textarea floating class="alinea-text" maxlength="700" [(ngModel)]="msg_txt"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <div style="text-align:center;width:100%">
+      <button ion-button style="margin-top:30px;"  (click)="send()" outline block>Envoyer</button>
+  </div>
+</div>
+
+  

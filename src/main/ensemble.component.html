@@ -1,0 +1,12 @@
+<div style="text-align: center" *ngIf="titre" >
+    <h1>{{titre.titre_name}}</h1>                
+    <div *ngFor="let article of titre.articles" >
+        <h2>{{article.article_name}}</h2>
+        <div class="center_middle" *ngFor="let alinea of article.alineas">
+            <single-alinea class="article-text" [alinea]="alinea" ></single-alinea>
+        </div>            
+    </div>
+</div>
+<!--<div *ngIf="dispalayNextButton">        
+    <button ion-button outline block style="margin-top:30px;" (click)="onNextVotes()">Poursuivre mes votes</button>
+</div>-->

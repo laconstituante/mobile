@@ -1,0 +1,30 @@
+<ion-card>
+    <ion-card-header>
+    Tous les votes que vous avez expimés
+    </ion-card-header>
+    <ion-card-content>
+    <canvas id="doughnutCanvas"></canvas>
+    </ion-card-content>
+</ion-card>
+
+<ion-card>
+    <ion-card-header>
+    état d'avancement des votes par titre (1 a 9)
+    </ion-card-header>
+    <ion-card-content>
+    <canvas id="titres1"></canvas>
+    </ion-card-content>
+</ion-card>
+<ion-card>
+    <ion-card-header>
+    état d'avancement des votes par titre (10 a 18)
+    </ion-card-header>
+    <ion-card-content>
+    <canvas id="titres2"></canvas>
+    </ion-card-content>
+</ion-card>
+<div style="text-align:center;width:100%">
+    <button ion-button style="margin-top:30px;"  (click)="goToVotePage()" outline block>Poursuivre mes votes</button>
+</div>
+
+

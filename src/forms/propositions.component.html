@@ -1,0 +1,6 @@
+<ion-list  *ngIf="propositions && propositions.length >0">
+  <proposition-component *ngFor="let proposition of propositions" [proposition]="proposition" ></proposition-component>
+</ion-list>
+<div class="footer-with-prop">
+    <button ion-button color="light" (click)="close()">Fermer</button>
+</div>

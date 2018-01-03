@@ -1,0 +1,38 @@
+<ion-card class="card">
+    <ion-card-content class="card-content">
+        <ion-card-title class="card-title">
+            Alinéa {{alinea.alinea_number}}
+        </ion-card-title>
+        <div>
+            <ion-segment [(ngModel)]="view">
+                <ion-segment-button value="current">
+                    En vigueur
+                </ion-segment-button>
+                <ion-segment-button value="makeOne">
+                    Propositions <span class="prop-badge" *ngIf="propositionCount > 0">&nbsp;{{propositionCount}}&nbsp;</span>
+                </ion-segment-button>
+            </ion-segment>
+        </div>
+        <div [ngSwitch]="view">
+            <div *ngSwitchCase="'current'">
+                <p class="alinea-text">
+                    {{alinea.alinea_text}}
+                </p>
+                <ion-row class="row">
+                    <ion-col class="col">
+                        <button ion-button color="light" [disabled]="alinea.vote === 0" (click)="vote(0)" small>Rejeter</button>
+                        <button ion-button color="light" [disabled]="alinea.vote === 1" (click)="vote(1)" small>Approuver</button>
+                        <button ion-button color="light" [disabled]="alinea.vote === 2" (click)="vote(2)" small>Sans opinion</button>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div *ngSwitchCase="'makeOne'">                
+                <ion-textarea class="alinea-text" maxlength="700" [(ngModel)]="proposition_txt" placeholder="Rédigez ici une nouvelle proposition pour cet alinea à soumettre au vote"></ion-textarea>
+                <ion-buttons end>
+                    <button ion-button (click)="soumettreProposition()" small>Soumettre</button>
+                    <button *ngIf="propositions && propositions.length" ion-button color="light" (click)="voirPropositions()" small>{{propositions.length}} propositions</button>
+                </ion-buttons>
+            </div>
+        </div>
+    </ion-card-content>
+</ion-card>

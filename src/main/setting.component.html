@@ -1,0 +1,33 @@
+<div *ngIf="isLoggedIn();then loggedIn else loggedOut">here is ignored</div>
+<ng-template #loggedIn>
+    <ion-list>
+        <ion-item (click)="logout()">            
+            <ion-icon name="log-out" item-left></ion-icon>
+            Deconnexion
+        </ion-item>
+        <ion-item (click)="myVotes()">
+            <ion-icon name="pie"  item-left></ion-icon>
+            Mes votes
+        </ion-item>
+        <ion-item (click)="contactus()">
+            <ion-icon name="create" item-left></ion-icon>
+            Nous contacter
+        </ion-item>   
+    </ion-list>
+</ng-template>
+<ng-template #loggedOut>    
+    <ion-list>
+        <ion-item (click)="login()">            
+            <ion-icon name="log-in" item-left></ion-icon>
+            Connectez-vous
+        </ion-item>
+        <ion-item (click)="about()">            
+            <ion-icon name="help" item-left></ion-icon>
+            A propos
+        </ion-item>
+        <ion-item (click)="contactus()">
+            <ion-icon name="create" item-left></ion-icon>
+            Nous contacter
+        </ion-item>        
+    </ion-list>
+</ng-template>

@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="header-title" (click)="goToHomePage()">
+            La constituante<br>
+            <table style="display: inline">
+                <tbody>
+                    <tr style="height:5px">
+                        <td style="background:blue;width: 40px;" title="liberté"></td>
+                        <td style="background:white;width: 40px;" title="égalité"></td>
+                        <td style="background:red;width: 40px;" title="fraternité"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </ion-title>
+        <ion-buttons style="margin-right:10px" end>
+            <button ion-button icon-right (click)="updateDisplayedView('setting-component')">
+                <ion-icon ios="ios-home" md="md-home"  large></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <home-page-component (createAccountEmitter)="createAccountClicked($event)" (settingEmitter)="updateDisplayedView($event)" *ngIf="display==='homepage'"></home-page-component>
+    <!--<ensemble-component *ngIf="display==='ensemble'" [titres]="titres" [dispalayNextButton]="true" (nextVotesEmitter)="display='resume-votes'"></ensemble-component>-->
+    <dash-board-component *ngIf="display==='dashboard'" (settingEmitter)="updateDisplayedView($event)"></dash-board-component>
+    <login-component *ngIf="display==='login-component'" (settingEmitter)="updateDisplayedView($event)"></login-component>
+    <resume-vote *ngIf="display=== 'resume-votes'" [titres]="titres" (scroleTopEmitter)="scrollToTop($event)" (settingEmitter)="updateDisplayedView($event)"></resume-vote>
+    <create-profile *ngIf="display=== 'create-profile'" (settingEmitter)="updateDisplayedView($event)"></create-profile>
+    <setting-component *ngIf="display=== 'setting-component'" (settingEmitter)="updateDisplayedView($event)"></setting-component>
+    <about-us-component *ngIf="display=== 'about-us-component'" (settingEmitter)="updateDisplayedView($event)"></about-us-component>
+    <contact-us-component *ngIf="display=== 'contact-us-component'" (settingEmitter)="updateDisplayedView($event)"></contact-us-component>
+    <user-votes-component *ngIf="display==='user-votes-component'" (settingEmitter)="updateDisplayedView($event)"></user-votes-component>
+    <insufficiant-privileges *ngIf="display==='insufficiant-privileges'" (settingEmitter)="updateDisplayedView($event)"></insufficiant-privileges>
+</ion-content>
